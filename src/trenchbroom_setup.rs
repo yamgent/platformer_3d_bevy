@@ -24,7 +24,7 @@ fn trenchbroom_config() -> TrenchBroomConfig {
 }
 
 fn write_trenchbroom_config(config: Res<TrenchBroomConfig>) {
-    let folder_path = "trenchbroom/";
+    let folder_path = "trenchbroom/config/games/platformer_3d_demo_bevy/";
     if let Err(err) = config.write_folder(folder_path) {
         error!("Could not write TrenchBroom config: {err}");
     }

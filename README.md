@@ -7,10 +7,18 @@
 ```sh
 git clone git@github.com:yamgent/platformer_3d_demo_bevy.git
 ```
-3. Open cmd.exe with admin privileges, then execute:
+3. Copy trenchbroom to the `<repopath>/trenchboom` folder.
+4. Run the game once to generate trenchbroom config.
 ```sh
-cd AppData/Roaming/TrenchBroom/games/
-mklink /D platformer_3d_demo_bevy <repopath>/trenchbroom
+mkdir trenchbroom/config/games/platformer_3d_demo_bevy/
+cargo r
+```
+
+## Run trenchbroom
+
+// TODO: Use xtask instead?
+```sh
+./trenchbroom/TrenchBroom.exe --portable
 ```
 
 // TODO Clean the bottom parts
