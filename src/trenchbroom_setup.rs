@@ -24,7 +24,9 @@ fn trenchbroom_config() -> TrenchBroomConfig {
 }
 
 fn write_trenchbroom_config(config: Res<TrenchBroomConfig>) {
-    if let Err(err) = config.write_folder("trenchbroom/") {
+    let folder_path = "trenchbroom/";
+    if let Err(err) = config.write_folder(folder_path) {
         error!("Could not write TrenchBroom config: {err}");
     }
+    info!("Finish writing trenchbroom config to {folder_path}");
 }
