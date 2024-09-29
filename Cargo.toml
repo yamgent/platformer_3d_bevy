@@ -76,6 +76,7 @@ log = { version = "0.4", features = [
     "max_level_debug",
     "release_max_level_warn",
 ] }
+bevy_trenchbroom = "0.5.1"
 
 [build-dependencies]
 embed-resource = "1"
