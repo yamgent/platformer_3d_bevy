@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 use bevy::window::WindowMode;
-use bevy_game::GamePlugin; // ToDo: Replace bevy_game with your new crate name.
+use platformer_3d_demo_bevy::GamePlugin;
 
 #[bevy_main]
 fn main() {
