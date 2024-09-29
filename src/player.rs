@@ -1,5 +1,4 @@
 use crate::actions::Actions;
-use crate::loading::TextureAssets;
 use crate::GameState;
 use bevy::prelude::*;
 
@@ -17,14 +16,8 @@ impl Plugin for PlayerPlugin {
     }
 }
 
-fn spawn_player(mut commands: Commands, textures: Res<TextureAssets>) {
-    commands
-        .spawn(SpriteBundle {
-            texture: textures.bevy.clone(),
-            transform: Transform::from_translation(Vec3::new(0., 0., 1.)),
-            ..Default::default()
-        })
-        .insert(Player);
+fn spawn_player(mut commands: Commands) {
+    commands.spawn(Camera3dBundle::default()).insert(Player);
 }
 
 fn move_player(
@@ -35,11 +28,11 @@ fn move_player(
     if actions.player_movement.is_none() {
         return;
     }
-    let speed = 150.;
+    let speed = 100.;
     let movement = Vec3::new(
         actions.player_movement.unwrap().x * speed * time.delta_seconds(),
-        actions.player_movement.unwrap().y * speed * time.delta_seconds(),
         0.,
+        -actions.player_movement.unwrap().y * speed * time.delta_seconds(),
     );
     for mut player_transform in &mut player_query {
         player_transform.translation += movement;
