@@ -6,6 +6,7 @@ use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
 use bevy::winit::WinitWindows;
 use bevy::DefaultPlugins;
+use bevy_trenchbroom::prelude::*;
 use platformer_3d_demo_bevy::GamePlugin;
 use std::io::Cursor;
 use winit::window::Icon;
@@ -31,6 +32,11 @@ fn main() {
                 .set(AssetPlugin {
                     meta_check: AssetMetaCheck::Never,
                     ..default()
+                })
+                // TrenchBroom maps use repeating textures, and currently by default bevy's images don't repeat.
+                // Use `repeating_image_sampler` to easily create a sampler for this that is optionally filtered.
+                .set(ImagePlugin {
+                    default_sampler: repeating_image_sampler(false),
                 }),
         )
         .add_plugins(GamePlugin)

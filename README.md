@@ -1,3 +1,28 @@
+# platformer_3d_demo_bevy
+
+## Setup
+
+1. Install rust.
+2. Clone this repo.
+```sh
+git clone git@github.com:yamgent/platformer_3d_demo_bevy.git
+```
+3. Copy trenchbroom to the `<repopath>/trenchboom` folder.
+4. Run the game once to generate trenchbroom config.
+```sh
+mkdir trenchbroom/config/games/platformer_3d_demo_bevy/
+cargo r
+```
+
+## Run trenchbroom
+
+// TODO: Use xtask instead?
+```sh
+./trenchbroom/TrenchBroom.exe --portable
+```
+
+// TODO Clean the bottom parts
+
 # A Bevy game template
 
 Template for a Game using the awesome [Bevy engine][bevy] featuring out of the box builds for Windows, Linux, macOS, Web (Wasm), Android, and iOS.
